@@ -1,8 +1,12 @@
 import initialState from './initialState';
-import { reducer as changeSecretsViewPathReducer } from './changeSecretsViewPath';
+import { reducer as changeSecretsListPathReducer } from './changeSecretsListPath';
+import { reducer as changeSecretsListFilterReducer } from './changeSecretsListFilter';
+import { reducer as changeSelectedSecretReducer } from './changeSelectedSecret';
 
 const reducers = [
-  changeSecretsViewPathReducer,
+  changeSecretsListPathReducer,
+  changeSecretsListFilterReducer,
+  changeSelectedSecretReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -14,8 +14,17 @@ export class SecretsList extends Component {
   render() {
     return (
       <div className="home-secrets-list">
-        <PathBar path={this.props.home.secretsViewPath} onClick={this.props.actions.changeSecretsViewPath}/>       
-        <SimpleList paths={this.props.paths} onDirClick={this.props.actions.changeSecretsViewPath}/> 
+        <PathBar path={this.props.home.secretsListPath} 
+                 onClick={this.props.actions.changeSecretsListPath}
+                 onFilterChange={this.props.actions.changeSecretsListFilter}
+                 filter={this.props.home.secretsListFilter}
+                 
+        />       
+        <SimpleList paths={this.props.paths} 
+                    onDirClick={this.props.actions.changeSecretsListPath}
+                    onSecretClick={this.props.actions.changeSelectedSecret}
+                    selectedSecret={this.props.selectedSecret}
+        /> 
       </div>
     );
   }
@@ -23,10 +32,13 @@ export class SecretsList extends Component {
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
+  const path = state.home.secretsListPath;
+  const filter = state.home.secretsListFilter;
+  const paths = state.home.secretsPaths;
   return {
     home: state.home,
-    root: state.home.secretsViewPath,
-    paths: state.home.secretsPaths.filter((path)=>path.match(state.home.secretsViewPath+'[^/]+/?$')),
+    paths: paths.filter((p)=>p.match(filter)).filter((p)=>p.match(path+'[^/]+/?$')),
+    selectedSecret: state.home.selectedSecret,
   };
 }
 

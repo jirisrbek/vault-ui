@@ -7,7 +7,8 @@ const initialState = {
                     '/secrets/dtest1/dtest21/','/secrets/dtest1/dtest21/test21','/secrets/dtest1/dtest21/test32',
                     
                     ],
-    secretsViewPath: "/secrets/",
+    secretsListPath: "/secrets/",
+    
 };
 
 export default initialState;
