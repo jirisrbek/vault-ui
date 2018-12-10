@@ -1,0 +1,1 @@
+export { changeSecretsViewPath } from './changeSecretsViewPath';

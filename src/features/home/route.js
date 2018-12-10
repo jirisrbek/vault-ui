@@ -11,6 +11,11 @@ export default {
       component: DefaultPage,
       isIndex: true,
     },
+    { path: 'secrets',
+      name: 'secrets',
+      component: SecretsList,
+      isIndex: false,
+    }
     
   ],
 };

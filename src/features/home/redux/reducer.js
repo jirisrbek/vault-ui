@@ -1,6 +1,8 @@
 import initialState from './initialState';
+import { reducer as changeSecretsViewPathReducer } from './changeSecretsViewPath';
 
 const reducers = [
+  changeSecretsViewPathReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -7,7 +7,6 @@ import { SecretsList } from './';
   and the container of the react router.
   You should adjust it according to the requirement of your app.
 */
-const paths = ['/secret/test/','/secret/test1','/secret/test2','/secret/test3/','/secret/atest4','/secret/atest4/'];
 
 export default class App extends Component {
   static propTypes = {
@@ -21,7 +20,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="home-app">
-        <SecretsList paths={paths}/>
         <div className="page-container">{this.props.children}</div>
       </div>
     );
